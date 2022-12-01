@@ -1,0 +1,26 @@
+{
+  "name": "asmith-99.github.io",
+  "version": "1.0.0",
+  "description": "a portfolio site",
+  "scripts": {
+    "start": "parcel ./src/index.html --port 3000",
+    "prebuild": "rmdir dist /s /q",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "push": "push-dir --dir=dist --branch=website --cleanup --verbose",
+    "deploy": "npm install && npm run build && npm run push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@work.github.com:asmith-99/asmith-99.github.io.git"
+  },
+  "author": "asmith-99",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "push-dir": "^0.4.1"
+  }
+}
