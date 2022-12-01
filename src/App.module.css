@@ -1,0 +1,30 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.generic-frame {
+  border: 1px solid white;
+  background: #ffffff0f;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-frame {
+  composes: generic-frame;
+  width: 600px;
+  height: 900px;
+}
+
+.index-frame {
+  composes: generic-frame;
+  width: 100px;
+  height: 900px;
+}
