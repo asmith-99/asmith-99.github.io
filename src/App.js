@@ -16,29 +16,62 @@ export default function App() {
       <div className={styles["index-container"]}>
         <Index />
       </div>
-      <div className={styles["pages-container"]}>
-        <Pages />
-      </div>
+      <Pages
+        pages={[
+          {
+            heading: "Welcome!",
+            content: <WelcomePage />,
+          },
+          {
+            heading: "Welcome!",
+            content: <WelcomePage />,
+          },
+          {
+            heading: "Welcome!",
+            content: <WelcomePage />,
+          },
+        ]}
+      />
     </div>
   );
 }
 
-// the place where one or more pages are kept
-const Pages = () => {
-  return <Page />;
-};
-
-const Page = () => {
+const WelcomePage = () => {
   return (
-    <div className={styles["page"]}>
-      <h1>Welcome</h1>
+    <>
       Hello, world!
       <p>{lorem.generateParagraphs(1)}</p>
       <p>{lorem.generateParagraphs(1)}</p>
       <p>{lorem.generateParagraphs(1)}</p>
       <p>{lorem.generateParagraphs(1)}</p>
+    </>
+  );
+};
+
+// the place where one or more pages are kept
+const Pages = ({ pages }) => {
+  const currentPage = 2;
+
+  return (
+    <div className={styles["pages-container"]}>
+      {pages.map((page, index) => {
+        if (index === currentPage) {
+          return (
+            <Page>
+              <h1>{page.heading}</h1>
+              {page.content}
+            </Page>
+          );
+        } else {
+          return <Page>{page.heading}</Page>;
+        }
+      })}
     </div>
   );
+};
+
+const Page = ({ children }) => {
+  return <div className={styles["page"]}>{children}</div>;
 };
 
 const Index = () => {
