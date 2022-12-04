@@ -1,6 +1,6 @@
 html {
-  box-sizing: border-box;
   font-family: "Helvetica", sans-serif;
+  color: white;
 }
 
 body {
@@ -9,5 +9,27 @@ body {
 }
 
 * {
-  color: white;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  left: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff2;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff8;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
 }

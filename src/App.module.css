@@ -8,38 +8,51 @@
   gap: 20px;
 }
 
-.generic-frame {
+.index-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 80%;
+  width: 100px;
+}
+
+.pages-container {
+  display: flex;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  height: 90%;
+  width: 600px;
+  padding-right: 10px;
+}
+
+/* 'material-like' styling for a sheet of paper */
+.paper {
   padding: 10px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1), inset 0px 0px 10px #06101f;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   background-color: #0a1b33;
   background-image: url("https://www.transparenttextures.com/patterns/graphy-dark.png");
   background-blend-mode: color-dodge;
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-.page-frame {
-  composes: generic-frame;
-  width: 600px;
+.page {
+  composes: paper;
+  width: 100%;
   height: 800px;
+  margin: 10% 0px;
 }
 
-.index-frame {
-  composes: generic-frame;
-  width: 100px;
-  height: 800px;
-  align-items: flex-start;
+.index {
+  composes: paper;
 }
 
-.index-frame hr {
+.index hr {
   width: 100%;
   margin-top: 10px;
 }
 
-.index-frame h2 {
+.index h2 {
   font-size: 20px;
   font-weight: lighter;
 }
