@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-
-import styles from "./App.module.css";
 import MagicPagesProvider, {
   MagicLink,
   useMagicPages,
 } from "./MagicPages/MagicPageProvider";
+import React, { useEffect } from "react";
+
 import Pages from "./MagicPages/Pages";
+import styles from "./App.module.css";
 
 export default function App() {
   return (

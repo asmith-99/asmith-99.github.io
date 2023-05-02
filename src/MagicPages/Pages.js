@@ -1,6 +1,6 @@
+import Page from "./Page.js";
 import styles from "../App.module.css";
 import { useMagicPages } from "./MagicPageProvider";
-import Page from "./Page.js";
 
 // the place where one or more pages are kept
 const Pages = ({}) => {

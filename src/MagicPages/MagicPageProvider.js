@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
+
 import { PAGES } from "../Content";
 
 const initialState = {
