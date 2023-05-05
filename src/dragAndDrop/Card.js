@@ -1,50 +1,8 @@
-import { useContext, useState } from "react";
+import Draggable from "./Draggable";
+import styles from "./Card.module.css";
 
-import { DragAndDropContext } from "./TableTop";
-import styles from "./dragAndDropStyles.module.css";
-
-function Card({}) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 100, y: 100 });
-
-  const { currentElementMoveHandler, currentElementPointerUpHandler } =
-    useContext(DragAndDropContext);
-
-  const handlePointerDown = (e) => {
-    setIsDragging(true);
-    const dragStartClickPosition = { x: e.pageX, y: e.pageY };
-    const dragStartElementPosition = position;
-    const handlePointerMoveWhileDragging = (e) => {
-      const pos = { x: e.pageX, y: e.pageY };
-      setPosition({
-        x: dragStartElementPosition.x + pos.x - dragStartClickPosition.x,
-        y: dragStartElementPosition.y + pos.y - dragStartClickPosition.y,
-      });
-    };
-
-    const handlePointerUpWhileDragging = () => {
-      setIsDragging(false);
-      currentElementMoveHandler.current = null;
-    };
-    currentElementMoveHandler.current = handlePointerMoveWhileDragging;
-    currentElementPointerUpHandler.current = handlePointerUpWhileDragging;
-  };
-
-  return (
-    <div
-      className={styles["card-default"]}
-      onPointerDown={handlePointerDown}
-      style={{ left: position.x, top: position.y }}
-    >
-      <div
-        className={`${styles["content-container"]} ${
-          isDragging ? styles["dragging"] : ""
-        }`}
-      >
-        Test Content
-      </div>
-    </div>
-  );
+function Card({ children }) {
+  return <Draggable containerClassname={styles["paper"]}>{children}</Draggable>;
 }
 
 export default Card;

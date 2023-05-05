@@ -1,0 +1,10 @@
+/* 'material-like' styling for a sheet of paper */
+.paper {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1), inset 0px 0px 10px #06101f;
+  background-color: #0a1b33;
+  background-image: url("https://www.transparenttextures.com/patterns/graphy-dark.png");
+  max-width: 600px;
+  line-height: 2;
+}

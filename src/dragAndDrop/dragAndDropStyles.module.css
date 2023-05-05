@@ -3,13 +3,8 @@
   height: 100%;
 }
 
-.card-default {
+.container-default {
   position: absolute;
-  background: white;
-  color: black;
-  padding: 10px;
-  width: 100px;
-  border-radius: 10px;
 }
 
 .dragging {
