@@ -1,54 +1,48 @@
+import { useContext, useState } from "react";
+
+import { DragAndDropContext } from "./TableTop";
 import styles from "./dragAndDropStyles.module.css";
-import { useState } from "react";
 
 function Card({}) {
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 100, y: 100 });
-  const [dragStartPosition, setDragStartPosition] = useState({ x: 0, y: 0 });
-  const [dragStartOffsetPosition, setDragStartOffsetPosition] = useState({
-    x: 0,
-    y: 0,
-  });
+
+  const { currentElementMoveHandler, currentElementPointerUpHandler } =
+    useContext(DragAndDropContext);
 
   const handlePointerDown = (e) => {
     setIsDragging(true);
-    setDragStartPosition({ x: e.pageX, y: e.pageY });
-    setDragStartOffsetPosition({
-      x: e.nativeEvent.offsetX,
-      y: e.nativeEvent.offsetY,
-    });
-    console.log(e);
-  };
-
-  const handlePointerMove = (e) => {
-    if (isDragging) {
+    const dragStartClickPosition = { x: e.pageX, y: e.pageY };
+    const dragStartElementPosition = position;
+    const handlePointerMoveWhileDragging = (e) => {
       const pos = { x: e.pageX, y: e.pageY };
       setPosition({
-        x: pos.x - dragStartOffsetPosition.x,
-        y: pos.y - dragStartOffsetPosition.y,
+        x: dragStartElementPosition.x + pos.x - dragStartClickPosition.x,
+        y: dragStartElementPosition.y + pos.y - dragStartClickPosition.y,
       });
-      console.log({
-        x: pos.x - dragStartOffsetPosition.x,
-        y: pos.y - dragStartOffsetPosition.y,
-      });
-      console.log("adjusted", position, dragStartPosition, pos);
-    }
-  };
+    };
 
-  const handlePointerUp = () => {
-    setIsDragging(false);
+    const handlePointerUpWhileDragging = () => {
+      setIsDragging(false);
+      currentElementMoveHandler.current = null;
+    };
+    currentElementMoveHandler.current = handlePointerMoveWhileDragging;
+    currentElementPointerUpHandler.current = handlePointerUpWhileDragging;
   };
 
   return (
     <div
       className={styles["card-default"]}
       onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerUp}
       style={{ left: position.x, top: position.y }}
     >
-      Test Content
+      <div
+        className={`${styles["content-container"]} ${
+          isDragging ? styles["dragging"] : ""
+        }`}
+      >
+        Test Content
+      </div>
     </div>
   );
 }

@@ -11,3 +11,7 @@
   width: 100px;
   border-radius: 10px;
 }
+
+.dragging {
+  user-select: none;
+}
