@@ -1,16 +1,29 @@
-import "./WorkHistory.css";
+import styles from "./WorkHistory.module.scss";
 
-export default function WorkHistory({ company, title, start, end, children }) {
+export default function WorkHistory({
+  workplace,
+  title,
+  duration,
+  blurb,
+  points,
+}) {
   return (
     <>
-      <div className="work-header">
-        <span className="company-name">{company}</span>
-        <span className="start-end">
-          {start}—{end}
-        </span>
+      <div className={styles["work-header"]}>
+        <span className={styles["company-name"]}>{workplace}</span>
+        <span className={styles["start-end"]}>{duration}</span>
       </div>
-      <div className="job-title">{title}</div>
-      {children}
+      <div className={styles["job-title"]}>{title}</div>
+      {/*
+        {blurb && blurb !== "" && <div>{blurb}</div>}
+      {points.length > 0 && (
+        <ul>
+          {points.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      )}
+      */}
     </>
   );
 }

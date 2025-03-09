@@ -40,23 +40,22 @@ small {
   font-family: "Source Serif 4", serif;
 }
 
-.education {
-  display: flex;
-  flex-direction: row;
-}
-
-.education img {
-  height: 6rem;
-}
-
-.education-details {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-left: 1rem;
-  gap: 0.5rem;
-}
-
 li {
   margin-top: 0.5rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.skills-grid div {
+  width: calc(33% - 2rem);
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
