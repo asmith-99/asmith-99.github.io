@@ -57,6 +57,6 @@ small {
   gap: 0.5rem;
 }
 
-.job-title {
-  font-style: italic;
+li {
+  margin-top: 0.5rem;
 }
