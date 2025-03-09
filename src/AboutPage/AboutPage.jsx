@@ -29,9 +29,6 @@ function AboutPage() {
           ))}
         </div>
       </section>
-      <section>
-        <h1>Projects</h1>
-      </section>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   );
   return (
     <div className={styles["container"]}>
-      <h2>Personal Projects</h2>
+      <h1>Personal Projects</h1>
       <p>
         These are projects which I completed on my own time for my own personal
         interest, or to solve a problem I had.
@@ -19,7 +19,7 @@ export default function ProjectsPage() {
       {personalProjects.map((projectDetails) => (
         <Project {...projectDetails} />
       ))}
-      <h2>Academic Projects</h2>
+      <h1>Academic Projects</h1>
       <p>These are projects which I completed as a part of my education.</p>
       {academicProjects.map((projectDetails) => (
         <Project {...projectDetails} />
