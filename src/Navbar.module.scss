@@ -1,0 +1,43 @@
+.central {
+  width: 30vw;
+  margin: 0 35vw;
+  position: relative;
+}
+
+.header-bar {
+  font-size: large;
+  width: calc(100% - 1rem);
+  background: white;
+  color: black;
+  padding: 0.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  position: relative;
+}
+
+.star {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  text-align: center;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  color: black;
+}
+
+.nav-link:hover {
+  opacity: 0.5;
+}

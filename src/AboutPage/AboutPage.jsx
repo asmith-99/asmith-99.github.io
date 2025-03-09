@@ -1,17 +1,11 @@
 import Education from "./Education";
 import WorkHistory from "./WorkHistory";
-import resume from "./resume.json";
-import styles from "./App.module.scss";
+import resume from "../resume.json";
+import styles from "./AboutPage.module.scss";
 
-function App() {
+function AboutPage() {
   return (
-    <div className={styles["central"]}>
-      <header className={styles["header-bar"]}>
-        Aiden Smith
-        <div className={styles["star"]}>
-          <span>★</span>
-        </div>
-      </header>
+    <div>
       <section>
         <h1>About me</h1>Hi! I'm a full-stack software developer, forever
         student, and scientist at heart. I love to learn how things work from
@@ -35,11 +29,8 @@ function App() {
           ))}
         </div>
       </section>
-      <section>
-        <h1>Projects</h1>
-      </section>
     </div>
   );
 }
 
-export default App;
+export default AboutPage;
