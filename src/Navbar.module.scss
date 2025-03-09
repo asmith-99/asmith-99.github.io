@@ -34,6 +34,10 @@
   text-decoration: none;
 }
 
+.nav-link:visited {
+  color: black;
+}
+
 .nav-link:hover {
   opacity: 0.5;
 }
