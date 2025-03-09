@@ -1,9 +1,9 @@
 import Education from "./Education";
 import WorkHistory from "./WorkHistory";
 import resume from "./resume.json";
-import styles from "./App.module.scss";
+import styles from "./MainPage.module.scss";
 
-function App() {
+function MainPage() {
   return (
     <div className={styles["central"]}>
       <header className={styles["header-bar"]}>
@@ -42,4 +42,4 @@ function App() {
   );
 }
 
-export default App;
+export default MainPage;
