@@ -1,6 +1,6 @@
 import Education from "./Education";
 import WorkHistory from "./WorkHistory";
-import resume from "./resume.json";
+import resume from "../resume.json";
 import styles from "./MainPage.module.scss";
 
 function MainPage() {
