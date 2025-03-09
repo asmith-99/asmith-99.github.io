@@ -1,31 +1,3 @@
-.central {
-  width: 30vw;
-  margin: 0 35vw;
-  position: relative;
-}
-
-.header-bar {
-  font-size: large;
-  position: relative;
-  width: calc(100% - 1rem);
-  background: white;
-  color: black;
-  padding: 0.5rem;
-  font-weight: bold;
-}
-
-.header-bar .star {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  text-align: center;
-  width: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 section {
   margin-top: 1rem;
   padding: 0.5rem;
