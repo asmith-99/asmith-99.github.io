@@ -1,16 +1,55 @@
 .container {
+  position: relative;
   width: 100%;
-  /*height: 25vh;*/
+  height: 20vh;
+  margin-top: 2rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.preview-content {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
-  margin-top: 2rem;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+
+.more-prompt {
+  opacity: 0.6;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.more-content {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  transition: opacity 0.25s;
+}
+
+.container:hover {
+  & .preview-content {
+    opacity: 0;
+    pointer-events: none;
+  }
+  & .more-content {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 .cover-image {
   width: 50%;
-  height: 25vh;
+  height: 20vh;
+  background: #281d66;
 }
 
 .details {
@@ -18,13 +57,13 @@
 }
 
 .project-name {
-  position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .duration {
-  position: absolute;
-  right: 0px;
-  top: 0px;
   font-style: italic;
+  padding: 0 0.5rem;
 }

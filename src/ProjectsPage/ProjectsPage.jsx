@@ -14,13 +14,16 @@ export default function ProjectsPage() {
       <h1>Personal Projects</h1>
       <p>
         These are projects which I completed on my own time for my own personal
-        interest, or to solve a problem I had.
+        interest, or to solve a problem I had. Hover over them to find out more!
       </p>
       {personalProjects.map((projectDetails) => (
         <Project {...projectDetails} />
       ))}
       <h1>Academic Projects</h1>
-      <p>These are projects which I completed as a part of my education.</p>
+      <p>
+        These are projects which I completed as a part of my education. Hover
+        over them to find out more!
+      </p>
       {academicProjects.map((projectDetails) => (
         <Project {...projectDetails} />
       ))}
