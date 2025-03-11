@@ -5,6 +5,7 @@ import starData from "./stars_all.json";
 
 export function renderStars(canvasContainer) {
   const scene = new THREE.Scene();
+  scene.background = new THREE.Color().setStyle("#0c0324");
   const rect = canvasContainer.getBoundingClientRect();
   const camera = new THREE.PerspectiveCamera(
     45,
@@ -76,7 +77,7 @@ void main() {
   controls.update();
 
   function animate() {
-    //points.rotation.y += 0.0001;
+    points.rotation.y += 0.00001;
     controls.update();
     renderer.render(scene, camera);
   }

@@ -1,13 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-import { renderStars } from "./stars";
-import styles from "./StarsPage.module.scss";
+import { Outlet } from "react-router";
+import { renderStars } from "./StarsPage/stars";
+import styles from "./StarWrapper.module.scss";
 
-export default function StarsPage() {
+export default function StarWrapper() {
   const canvasContainer = useRef(null);
   const renderer = useRef(null);
-
-  /*
 
   useEffect(() => {
     if (!canvasContainer.current || renderer.current) return;
@@ -16,11 +15,9 @@ export default function StarsPage() {
   }, []);
 
   return (
-    <div>
-      <div>Star Rendering Test</div>
+    <>
       <div className={styles["canvas-container"]} ref={canvasContainer} />
-    </div>
+      <Outlet />
+    </>
   );
-
-  */
 }
