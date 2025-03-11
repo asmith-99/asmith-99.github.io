@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router";
 
+import { cx } from "./util";
 import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
@@ -17,9 +18,9 @@ export default function Navbar() {
         <Link className={styles["nav-link"]} to="/resume">
           Resume
         </Link>
-        <div className={styles["star"]}>
+        <Link className={cx(styles["nav-link"], styles["star"])} to="/stars">
           <span>★</span>
-        </div>
+        </Link>
       </header>
       <Outlet />
     </div>

@@ -5,6 +5,7 @@ export default [
     index("AboutPage/AboutPage.jsx"),
     route("/projects", "ProjectsPage/ProjectsPage.jsx"),
     route("/resume", "ResumePage/ResumePage.jsx"),
+    route("/stars", "StarsPage/StarsPage.jsx"),
   ]),
   route("*", "catchall.jsx"),
 ];
