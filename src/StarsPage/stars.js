@@ -5,7 +5,7 @@ import starData from "./stars_all.json";
 
 export function renderStars(canvasContainer) {
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color().setStyle("#0c0324");
+  scene.background = new THREE.Color().setStyle("#0d0b1c");
   const rect = canvasContainer.getBoundingClientRect();
   const camera = new THREE.PerspectiveCamera(
     45,
@@ -74,6 +74,7 @@ void main() {
   scene.add(points);
 
   camera.position.z = 1;
+  points.rotation.y = (Math.PI * 3) / 8; // put Orion just into view on the right
   controls.update();
 
   function animate() {
