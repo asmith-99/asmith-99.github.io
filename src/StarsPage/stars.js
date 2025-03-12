@@ -1,9 +1,10 @@
 import * as THREE from "three";
 
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import starData from "./stars_all.json";
+import starData from "./stars_all_3.json";
 
 export function renderStars(canvasContainer) {
+  THREE.Object3D.DefaultUp = new THREE.Vector3(0, 0, 1); // the dataset uses z-up (physics) convention
   const scene = new THREE.Scene();
   scene.background = new THREE.Color().setStyle("#0d0b1c");
   const rect = canvasContainer.getBoundingClientRect();
@@ -13,31 +14,12 @@ export function renderStars(canvasContainer) {
     0.1,
     1000
   );
+  camera.up.set(0, 0, 1); // match the camera to the z-up convention
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(rect.width, rect.height);
   canvasContainer.appendChild(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
-
-  //const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-
-  const numStars = 7000;
-
-  const pointsData = starData.stars
-    .slice(0, numStars)
-    .map((starEntry) =>
-      new THREE.Vector3().setFromSphericalCoords(
-        100,
-        Math.PI / 2 - (starEntry.dec * Math.PI) / 180,
-        (starEntry.ra * Math.PI) / 180
-      )
-    );
-
-  const colors = starData.stars
-    .slice(0, numStars)
-    .flatMap((starEntry) =>
-      new THREE.Color().setStyle(starEntry.c ?? "#FFFFFF").toArray()
-    );
 
   const shaderMaterial = new THREE.ShaderMaterial({
     vertexShader: `
@@ -60,25 +42,27 @@ void main() {
     vertexColors: true,
   });
 
-  const SCALING_CONST = 5;
-
-  const sizes = starData.stars
-    .slice(0, numStars)
-    .map((starEntry) => SCALING_CONST * Math.sqrt(Math.exp(-starEntry.am)));
-
   const geo = new THREE.BufferGeometry();
-  geo.setFromPoints(pointsData);
-  geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
-  geo.setAttribute("size", new THREE.Float32BufferAttribute(sizes, 1));
+  geo.setAttribute(
+    "position",
+    new THREE.Float32BufferAttribute(starData.starPositions, 3)
+  );
+  geo.setAttribute(
+    "color",
+    new THREE.Float32BufferAttribute(starData.starColors, 3)
+  );
+  geo.setAttribute(
+    "size",
+    new THREE.Float32BufferAttribute(starData.starSizes, 1)
+  );
   const points = new THREE.Points(geo, shaderMaterial);
   scene.add(points);
 
-  camera.position.z = 1;
-  points.rotation.y = (Math.PI * 3) / 8; // put Orion just into view on the right
+  camera.position.y = -0.1;
   controls.update();
 
   function animate() {
-    points.rotation.y += 0.00001;
+    points.rotation.z += 0.00001;
     controls.update();
     renderer.render(scene, camera);
   }

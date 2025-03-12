@@ -73,32 +73,27 @@ const starColorData = [
     b: 0,
   },
 ];
+
 const lerp = (x, y, a) => x * (1 - a) + y * a;
 const clamp = (min, value, max) => Math.min(max, Math.max(min, value));
+
 function starRgbLerp(below, above, colorIndex) {
   const fraction =
     (colorIndex - below.colorIndex) / (above.colorIndex - below.colorIndex);
-  return {
-    r: lerp(below.r, above.r, fraction),
-    g: lerp(below.g, above.g, fraction),
-    b: lerp(below.b, above.b, fraction),
-  };
+  return [
+    lerp(below.r, above.r, fraction),
+    lerp(below.g, above.g, fraction),
+    lerp(below.b, above.b, fraction),
+  ];
 }
-function rgbToHex(rgbObj) {
-  return (
-    "#" +
-    Math.round(clamp(0, rgbObj.r, 255)).toString(16) +
-    Math.round(clamp(0, rgbObj.g, 255)).toString(16) +
-    Math.round(clamp(0, rgbObj.b, 255)).toString(16)
-  );
-}
-export function findHexColor(colorIndex) {
+
+export function findStarColor(colorIndex) {
+  let above, below;
   for (let i = 0; i < starColorData.length - 1; i++) {
-    let below = starColorData[i];
-    let above = starColorData[i + 1];
-    if (colorIndex >= below.colorIndex && colorIndex < above.colorIndex) {
-      const lerpedRgb = starRgbLerp(below, above, colorIndex);
-      return rgbToHex(lerpedRgb);
-    }
+    below = starColorData[i];
+    above = starColorData[i + 1];
+    if (colorIndex >= below.colorIndex && colorIndex < above.colorIndex) break;
   }
+  const starColor = starRgbLerp(below, above, colorIndex);
+  return starColor.map((value) => clamp(0, value / 255, 1));
 }
