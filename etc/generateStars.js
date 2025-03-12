@@ -9,6 +9,10 @@ const writeStream = fs.createWriteStream("./output.json");
 
 let columnNames;
 
+const positionPrecision = 8;
+const colorPrecision = 2;
+const sizePrecision = 2;
+
 const starPositions = [];
 const starColors = [];
 const starSizes = [];
@@ -28,9 +32,15 @@ parser.on("readable", () => {
 parser.on("end", () => {
   writeStream.write(
     JSON.stringify({
-      starPositions,
-      starColors,
-      starSizes,
+      starPositions: starPositions.map((value) =>
+        reducePrecision(value, positionPrecision)
+      ),
+      starColors: starColors.map((value) =>
+        reducePrecision(value, colorPrecision)
+      ),
+      starSizes: starSizes.map((value) =>
+        reducePrecision(value, sizePrecision)
+      ),
     })
   );
 });
@@ -83,4 +93,8 @@ function sphericalToCartesian(r, theta, phi) {
 const SCALING_CONST = 10;
 function calculateScaledStarSize(apparentMagnitude) {
   return SCALING_CONST * Math.sqrt(Math.pow(2.512, -apparentMagnitude));
+}
+
+function reducePrecision(value, precision) {
+  return Number(value.toPrecision(precision));
 }

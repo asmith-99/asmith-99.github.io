@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import starData from "./stars_all_6.json";
+import starData from "./stars_all_reduced_precision.json";
 
 export function renderStars(canvasContainer) {
   THREE.Object3D.DefaultUp = new THREE.Vector3(0, 0, 1); // the dataset uses z-up (physics) convention
