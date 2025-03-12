@@ -80,7 +80,7 @@ function sphericalToCartesian(r, theta, phi) {
 // to luminosity, and then takes the square root of that to get a radius.
 // "Math.pow(2.512, -starEntry.am)" should be *roughly* proportional to luminosity.
 // Maybe. Don't take my word for it.
-const SCALING_CONST = 0.05;
+const SCALING_CONST = 10;
 function calculateScaledStarSize(apparentMagnitude) {
   return SCALING_CONST * Math.sqrt(Math.pow(2.512, -apparentMagnitude));
 }

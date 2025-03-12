@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import starData from "./stars_all_3.json";
+import starData from "./stars_all_6.json";
 
 export function renderStars(canvasContainer) {
   THREE.Object3D.DefaultUp = new THREE.Vector3(0, 0, 1); // the dataset uses z-up (physics) convention
@@ -22,19 +22,43 @@ export function renderStars(canvasContainer) {
   const controls = new OrbitControls(camera, renderer.domElement);
 
   const shaderMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      sizeMul: { value: 0.75 },
+      floorSize: { value: 3.0 },
+      baseOpacity: { value: 0.5 },
+      skewWeight: { value: 0.5 },
+      skewColor: new THREE.Uniform(new THREE.Vector3(1.0, 1.0, 1.0)),
+    },
     vertexShader: `
 attribute float size;
 varying vec3 vColor;
+varying float vOpacity;
+uniform float floorSize;
+uniform float sizeMul;
 void main() {
   vColor = color;
+  float modifiedSize = size * sizeMul;
+  if (modifiedSize < floorSize) {
+    vOpacity = pow((modifiedSize / floorSize), 2.0);
+  } else {
+    vOpacity = 1.0;
+  }
   vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-  gl_PointSize = size * ( 300.0 / -mvPosition.z );
+  if (modifiedSize < floorSize) {
+   gl_PointSize = floorSize / -mvPosition.z;
+  } else {
+   gl_PointSize = modifiedSize / -mvPosition.z;
+  }
   gl_Position = projectionMatrix * mvPosition;
 }`,
     fragmentShader: `
 varying vec3 vColor;
+varying float vOpacity;
+uniform float baseOpacity;
+uniform vec3 skewColor;
+uniform float skewWeight;
 void main() {
-  gl_FragColor = vec4( vColor, 1.0 );
+  gl_FragColor = (vec4( vColor, vOpacity * baseOpacity ) + skewWeight * vec4( skewColor, vOpacity * baseOpacity )) / (1.0 + skewWeight);
 }`,
     blending: THREE.AdditiveBlending,
     depthTest: false,
