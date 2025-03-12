@@ -20,6 +20,7 @@ export function renderStars(canvasContainer) {
   canvasContainer.appendChild(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
+  controls.rotateSpeed = -0.15;
 
   const shaderMaterial = new THREE.ShaderMaterial({
     uniforms: {
