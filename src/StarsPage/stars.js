@@ -9,7 +9,7 @@ export function renderStars(canvasContainer) {
   scene.background = new THREE.Color().setStyle("#0d0b1c");
   const rect = canvasContainer.getBoundingClientRect();
   const camera = new THREE.PerspectiveCamera(
-    45,
+    75,
     rect.width / rect.height,
     0.1,
     1000
@@ -26,6 +26,7 @@ export function renderStars(canvasContainer) {
     uniforms: {
       sizeMul: { value: 0.75 },
       floorSize: { value: 3.0 },
+      starDimmingPower: { value: 2.0 },
       baseOpacity: { value: 0.5 },
       skewWeight: { value: 0.5 },
       skewColor: new THREE.Uniform(new THREE.Vector3(1.0, 1.0, 1.0)),
@@ -35,12 +36,13 @@ attribute float size;
 varying vec3 vColor;
 varying float vOpacity;
 uniform float floorSize;
+uniform float starDimmingPower;
 uniform float sizeMul;
 void main() {
   vColor = color;
   float modifiedSize = size * sizeMul;
   if (modifiedSize < floorSize) {
-    vOpacity = pow((modifiedSize / floorSize), 2.0);
+    vOpacity = pow((modifiedSize / floorSize), starDimmingPower);
   } else {
     vOpacity = 1.0;
   }
