@@ -17,13 +17,6 @@
   pointer-events: none;
 }
 
-.more-prompt {
-  opacity: 0.6;
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-}
-
 .more-content {
   opacity: 0;
   position: absolute;
@@ -47,13 +40,13 @@
 }
 
 .cover-image {
-  width: 50%;
+  width: 40%;
   height: 20vh;
   background: #281d66;
 }
 
 .details {
-  flex-grow: 1;
+  width: 60%;
 }
 
 .project-name {
@@ -65,5 +58,30 @@
 
 .duration {
   font-style: italic;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
+}
+
+.blurb {
+  font-style: italic;
+  padding-right: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.writeup-link {
+}
+
+.more-prompt {
+  opacity: 0.6;
+  text-decoration: underline;
+  cursor: pointer;
 }
