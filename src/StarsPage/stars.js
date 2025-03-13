@@ -16,6 +16,7 @@ export function renderStars(canvasContainer) {
   );
   camera.up.set(0, 0, 1); // match the camera to the z-up convention
   const renderer = new THREE.WebGLRenderer({ antialias: true });
+  //renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(rect.width, rect.height);
   canvasContainer.appendChild(renderer.domElement);
 
@@ -94,7 +95,16 @@ void main() {
     renderer.render(scene, camera);
   }
 
+  function onWindowResize() {
+    const rect = canvasContainer.getBoundingClientRect();
+    camera.aspect = rect.width / rect.height;
+    camera.updateProjectionMatrix();
+    //renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(rect.width, rect.height);
+  }
+
   renderer.setAnimationLoop(animate);
+  window.addEventListener("resize", onWindowResize);
 
   return renderer.domElement;
 }
