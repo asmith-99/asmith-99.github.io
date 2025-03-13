@@ -1,13 +1,16 @@
 :root {
-  color: #ffffff;
-  background-color: #242424;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   font-family: "Open Sans", Arial, sans-serif;
 
-  --portrait-breakpoint-aspect: 0.85; /* aspect ratios smaller than this are considered 'portrait'*/
+  --body-color: #ffffff;
+  --header-bg-color: #ffffff;
+  --header-color: #000000;
+  --bg-color: #0d0b1c;
+
+  color: var(--body-color);
+  background-color: var(--bg-color);
 }
 
 * {

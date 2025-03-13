@@ -16,8 +16,8 @@
 .header-bar {
   font-size: large;
   width: calc(100% - 1rem);
-  background: white;
-  color: black;
+  background: var(--header-bg-color);
+  color: var(--header-color);
   padding: 0.5rem;
   font-weight: bold;
   display: flex;
@@ -39,12 +39,12 @@
 }
 
 .nav-link {
-  color: black;
+  color: var(--header-color);
   text-decoration: none;
 }
 
 .nav-link:visited {
-  color: black;
+  color: var(--header-color);
 }
 
 .nav-link:hover {
