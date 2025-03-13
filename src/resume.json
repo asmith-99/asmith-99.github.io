@@ -145,7 +145,7 @@
       "description": [
         "Designed and built a 2-axis robotic arm with a laser pointer affixed to the end. A controller written in C is relayed commands via serial connection from a Python program running on a PC, which provides coordinates corresponding to the direction to the stars in the sky corrected for the local time, longitude, and latitude."
       ],
-      "coverImage": "",
+      "coverImage": "projects/starpointer_temp_cover.png",
       "writeupLink": ""
     },
     {
