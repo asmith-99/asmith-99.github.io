@@ -7,9 +7,21 @@ function AboutPage() {
   return (
     <div>
       <section>
-        <h1>About me</h1>Hi! I'm a full-stack software developer, forever
-        student, and scientist at heart. I love to learn how things work from
-        the atoms-up.
+        <h1>About me</h1>
+        <p>
+          Hi! I'm a full-stack software developer, forever-student, and
+          scientist at heart. I love to jump in the deep end, learn how things
+          work from the atoms-up, and share my knowledge with others.
+        </p>
+        <p>
+          I have the most experience working in Javascript, but I've worked in
+          C/C++, Python, MATLAB, and others.
+        </p>
+        <p>
+          When I'm not on the job I enjoy working on hardware projects, reading
+          sci-fi, playing video games and D&D, and astronomy. I also love choir
+          and musical theatre, and I'm a pretty good cook!
+        </p>
       </section>
       <section>
         <h1>Education</h1>
