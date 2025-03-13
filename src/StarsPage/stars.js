@@ -15,7 +15,7 @@ export function renderStars(canvasContainer) {
     1000
   );
   camera.up.set(0, 0, 1); // match the camera to the z-up convention
-  const renderer = new THREE.WebGLRenderer();
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(rect.width, rect.height);
   canvasContainer.appendChild(renderer.domElement);
 
@@ -89,7 +89,7 @@ void main() {
   controls.update();
 
   function animate() {
-    points.rotation.z += 0.00001;
+    points.rotation.z += 0.00005;
     controls.update();
     renderer.render(scene, camera);
   }
