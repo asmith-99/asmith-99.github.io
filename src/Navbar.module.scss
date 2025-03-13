@@ -1,7 +1,16 @@
 .central {
-  width: 30vw;
-  margin: 0 35vw;
+  width: 600px;
+  margin: 0 calc((100vw - 600px) / 2);
   position: relative;
+}
+
+@media (max-aspect-ratio: 0.85) {
+  .central {
+    width: 100vw;
+    margin: 0;
+    padding: 1rem;
+    position: relative;
+  }
 }
 
 .header-bar {

@@ -6,6 +6,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   font-family: "Open Sans", Arial, sans-serif;
+
+  --portrait-breakpoint-aspect: 0.85; /* aspect ratios smaller than this are considered 'portrait'*/
 }
 
 * {
