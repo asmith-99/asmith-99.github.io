@@ -6,7 +6,10 @@ import starData from "./stars_all_reduced_precision.json";
 export function renderStars(canvasContainer) {
   THREE.Object3D.DefaultUp = new THREE.Vector3(0, 0, 1); // the dataset uses z-up (physics) convention
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color().setStyle("#0d0b1c");
+  const bgColor = window
+    .getComputedStyle(canvasContainer)
+    .getPropertyValue("--bg-color");
+  scene.background = new THREE.Color().setStyle(bgColor);
   const rect = canvasContainer.getBoundingClientRect();
   const camera = new THREE.PerspectiveCamera(
     75,
@@ -16,6 +19,7 @@ export function renderStars(canvasContainer) {
   );
   camera.up.set(0, 0, 1); // match the camera to the z-up convention
   const renderer = new THREE.WebGLRenderer({ antialias: true });
+  //renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(rect.width, rect.height);
   canvasContainer.appendChild(renderer.domElement);
 
@@ -94,7 +98,16 @@ void main() {
     renderer.render(scene, camera);
   }
 
+  function onWindowResize() {
+    const rect = canvasContainer.getBoundingClientRect();
+    camera.aspect = rect.width / rect.height;
+    camera.updateProjectionMatrix();
+    //renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(rect.width, rect.height);
+  }
+
   renderer.setAnimationLoop(animate);
+  window.addEventListener("resize", onWindowResize);
 
   return renderer.domElement;
 }

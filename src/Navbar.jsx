@@ -23,6 +23,13 @@ export default function Navbar() {
         </Link>
       </header>
       <Outlet />
+      <footer className={styles["footer"]}>
+        <span>©2025 Aiden Smith</span>
+        <span>|</span>
+        <a href="mailto:aiden.smith10@gmail.com">Email</a>
+        <span>|</span>
+        <a href="https://github.com/asmith-99">Github</a>
+      </footer>
     </div>
   );
 }

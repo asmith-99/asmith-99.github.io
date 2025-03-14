@@ -1,7 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  height: 20vh;
+  height: 12rem;
   margin-top: 2rem;
   border: 1px solid white;
   border-radius: 1rem;
@@ -28,7 +28,8 @@
   transition: opacity 0.25s;
 }
 
-.container:hover {
+.container:hover,
+.container[data-show-more="true"] {
   & .preview-content {
     opacity: 0;
     pointer-events: none;
