@@ -6,7 +6,7 @@ export default function ResumePage() {
       <div>
         Want to download a copy? Click{" "}
         <a href="/Resume draft 2.pdf" download="Aiden Smith.pdf">
-          here
+          here.
         </a>
       </div>
       <object

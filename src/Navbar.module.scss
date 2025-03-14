@@ -1,14 +1,23 @@
 .central {
-  width: 30vw;
-  margin: 0 35vw;
+  width: calc(min(600px, 100vw));
+  margin: 0 calc((100vw - min(600px, 100vw)) / 2);
   position: relative;
+}
+
+@media (max-aspect-ratio: 0.85) or (max-width: 600px) {
+  .central {
+    width: 100vw;
+    margin: 0;
+    padding: 1rem;
+    position: relative;
+  }
 }
 
 .header-bar {
   font-size: large;
   width: calc(100% - 1rem);
-  background: white;
-  color: black;
+  background: var(--header-bg-color);
+  color: var(--header-color);
   padding: 0.5rem;
   font-weight: bold;
   display: flex;
@@ -30,14 +39,23 @@
 }
 
 .nav-link {
-  color: black;
+  color: var(--header-color);
   text-decoration: none;
 }
 
 .nav-link:any-link {
-  color: black;
+  color: var(--header-color);
 }
 
 .nav-link:hover {
   opacity: 0.5;
+}
+
+.footer {
+  margin-top: 4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }

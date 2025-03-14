@@ -13,7 +13,7 @@ export default function Project({
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} data-show-more={showMore}>
       <div className={styles["preview-content"]}>
         <img className={styles["cover-image"]} src={coverImage} />
         <div className={styles["details"]}>
@@ -35,7 +35,12 @@ export default function Project({
             Writeup
           </Link>
         )}
-        <span className={styles["more-prompt"]}>More...</span>
+        <span
+          className={styles["more-prompt"]}
+          onClick={() => setShowMore((value) => !value)}
+        >
+          {showMore ? "Back" : "More..."}
+        </span>
       </div>
     </div>
   );
