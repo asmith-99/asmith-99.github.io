@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
-    "build": "vite build",
+    "build": "react-router build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d build/client -m \"Automatic build deployment\""
   },
   "dependencies": {
     "@react-router/node": "^7.3.0",
     "csv-parse": "^5.6.0",
+    "gh-pages": "^6.3.0",
     "isbot": "^5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

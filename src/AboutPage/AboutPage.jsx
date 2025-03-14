@@ -19,7 +19,7 @@ function AboutPage() {
         </p>
         <p>
           When I'm not on the job I enjoy working on hardware projects, reading
-          sci-fi, playing video games and D&D, and astronomy. I also love choir
+          sci-fi, playing video games and D&D, and astronomy. I also like choir
           and musical theatre, and I'm a pretty good cook!
         </p>
       </section>
