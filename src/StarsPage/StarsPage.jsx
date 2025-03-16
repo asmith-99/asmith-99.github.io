@@ -1,26 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-
-import { renderStars } from "./stars";
 import styles from "./StarsPage.module.scss";
 
 export default function StarsPage() {
-  const canvasContainer = useRef(null);
-  const renderer = useRef(null);
-
-  /*
-
-  useEffect(() => {
-    if (!canvasContainer.current || renderer.current) return;
-    const newCanvas = renderStars(canvasContainer.current);
-    renderer.current = newCanvas;
-  }, []);
-
   return (
-    <div>
-      <div>Star Rendering Test</div>
-      <div className={styles["canvas-container"]} ref={canvasContainer} />
+    <div className={styles["blurb"]}>
+      The background for this site was written using three.js, and shows a view
+      of the 9000 brightest stars. The size and color of the stars represents
+      the apparent magnitude and color index of the real star. On this page the
+      background is clickable- try clicking and dragging, or zooming out!
+      <p>
+        Want to know more? Check out the{" "}
+        <a href="https://github.com/asmith-99/asmith-99.github.io">
+          github page
+        </a>{" "}
+        for this site.
+      </p>
     </div>
   );
-
-  */
 }

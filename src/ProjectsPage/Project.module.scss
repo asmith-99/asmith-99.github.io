@@ -40,6 +40,11 @@
   }
 }
 
+.container:hover .more-prompt {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .cover-image {
   width: 40%;
   height: 20vh;
@@ -87,4 +92,5 @@
   opacity: 0.6;
   text-decoration: underline;
   cursor: pointer;
+  transition: opacity 0.25s;
 }
