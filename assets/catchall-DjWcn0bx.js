@@ -1,1 +1,0 @@
-import{w as t}from"./with-props-CoJcNdIQ.js";import{j as o}from"./jsx-runtime-D_zvdyIk.js";import"./chunk-K6CSEXPM-CK_bJG8K.js";const i=t(function(){return o.jsx("div",{children:"Sorry, that page doesn't exist!"})});export{i as default};

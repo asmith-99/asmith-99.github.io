@@ -1,4 +1,4 @@
-import{w as Bi}from"./with-props-CoJcNdIQ.js";import{j as A1}from"./jsx-runtime-D_zvdyIk.js";import{a as p8,O as zi}from"./chunk-K6CSEXPM-CK_bJG8K.js";/**
+import{w as Bi}from"./with-props--4V-IpvB.js";import{a as p8,o as A1,O as zi}from"./chunk-K6CSEXPM-CHi24jHv.js";/**
  * @license
  * Copyright 2010-2025 Three.js Authors
  * SPDX-License-Identifier: MIT
@@ -3854,4 +3854,4 @@ uniform vec3 skewColor;
 uniform float skewWeight;
 void main() {
   gl_FragColor = (vec4( vColor, vOpacity * baseOpacity ) + skewWeight * vec4( skewColor, vOpacity * baseOpacity )) / (1.0 + skewWeight);
-}`,blending:Y8,depthTest:!1,transparent:!0,vertexColors:!0}),l=new ae;l.setAttribute("position",new Wt(X8.starPositions,3)),l.setAttribute("color",new Wt(X8.starColors,3)),l.setAttribute("size",new Wt(X8.starSizes,1));const c=new l5(l,o);t.add(c),r.position.y=-.1,a.update();function u(){c.rotation.z+=5e-5,a.update(),s.render(t,r)}function d(){const f=i.getBoundingClientRect();r.aspect=f.width/f.height,r.updateProjectionMatrix(),s.setSize(f.width,f.height)}return s.setAnimationLoop(u),window.addEventListener("resize",d),s.domElement}const mr={"canvas-container":"_canvas-container_lr7yu_1"},xr=Bi(function(){const t=p8.useRef(null),e=p8.useRef(null);return p8.useEffect(()=>{if(!t.current||e.current)return;const n=pr(t.current);e.current=n},[]),A1.jsxs(A1.Fragment,{children:[A1.jsx("div",{className:mr["canvas-container"],ref:t}),A1.jsx(zi,{})]})});export{xr as default};
+}`,blending:Y8,depthTest:!1,transparent:!0,vertexColors:!0}),l=new ae;l.setAttribute("position",new Wt(X8.starPositions,3)),l.setAttribute("color",new Wt(X8.starColors,3)),l.setAttribute("size",new Wt(X8.starSizes,1));const c=new l5(l,o);t.add(c),r.position.y=-.1,a.update();function u(){c.rotation.z+=5e-5,a.update(),s.render(t,r)}function d(){const f=i.getBoundingClientRect();r.aspect=f.width/f.height,r.updateProjectionMatrix(),s.setSize(f.width,f.height)}return s.setAnimationLoop(u),window.addEventListener("resize",d),s.domElement}const mr={"canvas-container":"_canvas-container_lr7yu_1"},vr=Bi(function(){const t=p8.useRef(null),e=p8.useRef(null);return p8.useEffect(()=>{if(!t.current||e.current)return;const n=pr(t.current);e.current=n},[]),A1.jsxs(A1.Fragment,{children:[A1.jsx("div",{className:mr["canvas-container"],ref:t}),A1.jsx(zi,{})]})});export{vr as default};
