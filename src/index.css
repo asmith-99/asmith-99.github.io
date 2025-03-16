@@ -8,6 +8,14 @@
   --header-bg-color: #ffffff;
   --header-color: #000000;
   --bg-color: #0d0b1c;
+  --accent-color: #352d72;
+  --accent-color-light: #a295ff;
+
+  --header-bg: linear-gradient(
+    45deg,
+    var(--header-bg-color),
+    var(--accent-color-light)
+  );
 
   color: var(--body-color);
   background-color: var(--bg-color);
@@ -26,5 +34,12 @@
 a,
 a:link,
 a:visited {
-  color: #cbc5ff;
+  color: var(--accent-color-light);
+}
+
+h1 {
+  background: var(--header-bg);
+  color: transparent;
+  background-clip: text;
+  width: fit-content;
 }
