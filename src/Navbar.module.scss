@@ -1,13 +1,11 @@
 .central {
   width: calc(min(800px, 100vw));
-  margin: 0 calc((100vw - min(800px, 100vw)) / 2);
   position: relative;
 }
 
 @media (max-aspect-ratio: 0.85) or (max-width: 800px) {
   .central {
     width: 100vw;
-    margin: 0;
     padding: 1rem;
     position: relative;
   }
