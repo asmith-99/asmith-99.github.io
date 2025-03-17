@@ -1,5 +1,26 @@
+@import "../mixins.scss";
+
 .blurb {
   margin-top: 2rem;
   pointer-events: none;
   user-select: none;
+  padding: 2rem;
+  @include blurred-bg;
+  &[data-is-hidden="true"] {
+    display: none;
+  }
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.button {
+  border: 1px solid var(--accent-color-light);
+  color: white;
+  background: var(--bg-color);
+  margin: auto;
 }

@@ -12,20 +12,24 @@ export default function ProjectsPage() {
   );
   return (
     <div className={styles["container"]}>
-      <h1>Personal Projects</h1>
-      <p>
-        These are projects which I completed on my own time for my own personal
-        interest, or to solve a problem I had. Hover over them or click
-        'More...'
-      </p>
+      <section className={styles["about-section"]}>
+        <h1>Personal Projects</h1>
+        <p>
+          These are projects which I completed on my own time for my own
+          personal interest, or to solve a problem I had. Hover over them or
+          click 'More...'
+        </p>
+      </section>
       {personalProjects.map((projectDetails) => (
         <Project {...projectDetails} key={projectDetails.name} />
       ))}
-      <h1>Academic Projects</h1>
-      <p>
-        These are projects which I completed as a part of my education. Hover
-        over them or click 'More...'
-      </p>
+      <section className={styles["about-section"]}>
+        <h1>Academic Projects</h1>
+        <p>
+          These are projects which I completed as a part of my education. Hover
+          over them or click 'More...'
+        </p>
+      </section>
       {academicProjects.map((projectDetails) => (
         <Project {...projectDetails} key={projectDetails.name} />
       ))}

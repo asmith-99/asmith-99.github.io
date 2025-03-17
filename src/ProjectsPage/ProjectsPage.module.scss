@@ -1,4 +1,16 @@
+@import "../mixins.scss";
+
 .container {
   width: 100%;
   margin-top: 2rem;
+}
+
+.about-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  @include blurred-bg;
+  & h1 {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
 }

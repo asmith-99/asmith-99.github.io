@@ -1,12 +1,13 @@
 import Education from "./Education";
 import WorkHistory from "./WorkHistory";
+import { cx } from "../util";
 import resume from "../resume.json";
 import styles from "./AboutPage.module.scss";
 
 function AboutPage() {
   return (
     <div>
-      <section>
+      <section className={styles["about-section"]}>
         <h1>About me</h1>
         <p>
           Hi! I'm a full-stack software developer, forever-student, and
@@ -23,17 +24,17 @@ function AboutPage() {
           and musical theatre, and I'm a pretty good cook!
         </p>
       </section>
-      <section>
+      <section className={styles["about-section"]}>
         <h1>Education</h1>
         <Education />
       </section>
-      <section>
+      <section className={cx(styles["about-section"], styles["work-exp"])}>
         <h1>Work</h1>
         {resume.experience.map((work) => (
           <WorkHistory {...work} />
         ))}
       </section>
-      <section>
+      <section className={styles["about-section"]}>
         <h1>Skills</h1>
         <div className={styles["skills-grid"]}>
           {resume.skills.map((skill) => (

@@ -3,11 +3,12 @@ import styles from "./ResumePage.module.scss";
 export default function ResumePage() {
   return (
     <div className={styles["content"]}>
-      <div>
+      <div className={styles["explanation"]}>
         Want to download a copy? Click{" "}
         <a href="/Resume draft 2.pdf" download="Aiden Smith.pdf">
           here.
-        </a>
+        </a>{" "}
+        Or check it out, embedded below:
       </div>
       <object
         className={styles["embedded-resume"]}

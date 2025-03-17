@@ -1,9 +1,12 @@
-import { Link, Outlet } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
 
 import { cx } from "./util";
 import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
+  const location = useLocation();
+  const showFooter = location.pathname !== "/stars";
+
   return (
     <div className={styles["central"]}>
       <header className={styles["header-bar"]}>
@@ -23,13 +26,15 @@ export default function Navbar() {
         </Link>
       </header>
       <Outlet />
-      <footer className={styles["footer"]}>
-        <span>©2025 Aiden Smith</span>
-        <span>|</span>
-        <a href="mailto:aiden.smith10@gmail.com">Email</a>
-        <span>|</span>
-        <a href="https://github.com/asmith-99">Github</a>
-      </footer>
+      {showFooter && (
+        <footer className={styles["footer"]}>
+          <span>©2025 Aiden Smith</span>
+          <span>|</span>
+          <a href="mailto:aiden.smith10@gmail.com">Email</a>
+          <span>|</span>
+          <a href="https://github.com/asmith-99">Github</a>
+        </footer>
+      )}
     </div>
   );
 }

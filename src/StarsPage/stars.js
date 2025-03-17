@@ -28,13 +28,13 @@ export function renderStars(canvasContainer) {
 
   const shaderMaterial = new THREE.ShaderMaterial({
     uniforms: {
-      sizeMul: { type: "f", value: 0.75 },
+      sizeMul: { type: "f", value: 1.25 },
       floorSize: { type: "f", value: 4.0 },
-      starDimmingPower: { type: "f", value: 2.0 },
-      baseOpacity: { type: "f", value: 0.5 },
-      skewWeight: { type: "f", value: 0.5 },
+      starDimmingPower: { type: "f", value: 3.0 },
+      baseOpacity: { type: "f", value: 0.8 },
+      skewWeight: { type: "f", value: 0.25 },
       currentTime: { type: "f", value: 0.0 },
-      starTwinklingStrength: { type: "f", value: 1.0 },
+      starTwinklingStrength: { type: "f", value: 1.5 },
       skewColor: new THREE.Uniform(new THREE.Vector3(1.0, 1.0, 1.0)),
     },
     vertexShader: `
@@ -110,7 +110,7 @@ void main() {
   // star. This function varies the star's base size, to create a 'twinkling' effect.
   geo.setAttribute(
     "ca",
-    new THREE.Float32BufferAttribute(randomArray(starsNumber, 0, 5), 1)
+    new THREE.Float32BufferAttribute(randomArray(starsNumber, 0, 0.5), 1)
   );
   geo.setAttribute(
     "cb",
@@ -118,7 +118,7 @@ void main() {
   );
   geo.setAttribute(
     "cc",
-    new THREE.Float32BufferAttribute(randomArray(starsNumber, 0, 0.5), 1)
+    new THREE.Float32BufferAttribute(randomArray(starsNumber, 0, 6), 1)
   );
   const points = new THREE.Points(geo, shaderMaterial);
   scene.add(points);

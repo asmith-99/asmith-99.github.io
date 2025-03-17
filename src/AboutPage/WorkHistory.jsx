@@ -9,11 +9,13 @@ export default function WorkHistory({
 }) {
   return (
     <>
-      <div className={styles["work-header"]}>
-        <span className={styles["company-name"]}>{workplace}</span>
-        <span className={styles["start-end"]}>{duration}</span>
-      </div>
-      <div className={styles["job-title"]}>{title}</div>
+      <section className={styles["container"]}>
+        <div className={styles["work-header"]}>
+          <span className={styles["company-name"]}>{workplace}</span>
+          <span className={styles["start-end"]}>{duration}</span>
+        </div>
+        <div className={styles["job-title"]}>{title}</div>
+      </section>
       {/*
         {blurb && blurb !== "" && <div>{blurb}</div>}
       {points.length > 0 && (
