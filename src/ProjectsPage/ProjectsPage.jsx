@@ -3,7 +3,6 @@ import resume from "../resume.json";
 import styles from "./ProjectsPage.module.scss";
 
 export default function ProjectsPage() {
-  console.log(resume.projects[0]);
   const academicProjects = resume.projects.filter(
     (project) => project.isAcademic
   );

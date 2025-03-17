@@ -3,6 +3,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 300;
 
   --body-color: #ffffff;
   --header-bg-color: #ffffff;

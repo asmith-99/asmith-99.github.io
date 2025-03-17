@@ -1,6 +1,10 @@
+import MoonLoader from "../components/MoonLoader";
 import styles from "./ResumePage.module.scss";
+import { useState } from "react";
 
 export default function ResumePage() {
+  const [pdfLoaded, setPdfLoaded] = useState(true);
+
   return (
     <div className={styles["content"]}>
       <div className={styles["explanation"]}>
@@ -14,7 +18,7 @@ export default function ResumePage() {
         className={styles["embedded-resume"]}
         data="/Resume draft 2.pdf"
         type="application/pdf"
-        standby="hello? this thing on?"
+        onLoad={() => setPdfLoaded(true)}
       >
         <p>
           Sorry, it looks like your browser does not support inline PDFs. Please
@@ -24,6 +28,11 @@ export default function ResumePage() {
           .
         </p>
       </object>
+      {!pdfLoaded && (
+        <div className={styles["loading-container"]}>
+          <MoonLoader loading={true} label={"Loading Resume..."} />
+        </div>
+      )}
     </div>
   );
 }
