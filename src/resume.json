@@ -103,7 +103,7 @@
       ]
     }
   ],
-  "/projects": [
+  "projects": [
     {
       "name": "Tile Macropad",
       "isAcademic": false,
