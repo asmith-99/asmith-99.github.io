@@ -143,7 +143,7 @@ void main() {
     const rect = canvasContainer.getBoundingClientRect();
     camera.aspect = rect.width / rect.height;
     camera.updateProjectionMatrix();
-    //renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(rect.width, rect.height);
   }
 
