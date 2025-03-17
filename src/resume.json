@@ -103,7 +103,7 @@
       ]
     }
   ],
-  "projects": [
+  "/projects": [
     {
       "name": "Tile Macropad",
       "isAcademic": false,
@@ -123,7 +123,7 @@
       "description": [
         "Off-the-shelf RF-controlled outlet switches are controlled using a RF transmitter attached to a Raspberry Pi. The Raspberry Pi is running a Node.JS + Express server, which serves both a React web-app and an API that can control the outlet switches via the RF transmitter. The website, accessible to any devices on the network, allows the user to view and toggle the state of all connected outlet switches."
       ],
-      "coverImage": "projects/homeauto_cover.png",
+      "coverImage": "/projects/homeauto_cover.png",
       "writeupLink": ""
     },
     {
@@ -134,7 +134,7 @@
       "description": [
         "Designed and built a compact autonomous two-wheeled robot with a suite of sensors (ultrasonic, touch, light) and a visual design with servo-actuated ‘ears’ to imitate the behavior of household pets. "
       ],
-      "coverImage": "projects/catbot_cover.png",
+      "coverImage": "/projects/catbot_cover.png",
       "writeupLink": ""
     },
     {
@@ -145,7 +145,7 @@
       "description": [
         "Designed and built a 2-axis robotic arm with a laser pointer affixed to the end. A controller written in C is relayed commands via serial connection from a Python program running on a PC, which provides coordinates corresponding to the direction to the stars in the sky corrected for the local time, longitude, and latitude."
       ],
-      "coverImage": "projects/starpointer_temp_cover.png",
+      "coverImage": "/projects/starpointer_temp_cover.png",
       "writeupLink": ""
     },
     {
@@ -156,7 +156,7 @@
       "description": [
         "Designed and built a miniature 4-axis robotic arm, controlled using a matching 'puppet arm' with a potentiometer in each joint and driven using an MP430 microcontroller and firmware written in C."
       ],
-      "coverImage": "projects/msp430_arm_cover.png",
+      "coverImage": "/projects/msp430_arm_cover.png",
       "writeupLink": ""
     },
     {
@@ -167,7 +167,7 @@
       "description": [
         "Created a C++ program capable of rendering different types of scattering (diffuse, dielectric, and metallic) in scenes using the path-tracing method with global illumination, multisampling, light sources and depth of field."
       ],
-      "coverImage": "projects/pathtracer_cover.png",
+      "coverImage": "/projects/pathtracer_cover.png",
       "writeupLink": ""
     },
     {
@@ -178,7 +178,7 @@
       "description": [
         "Wrote a program in Matlab which solves for and visualizes the evolution of the time-dependent Shrödinger equation in 1D and 2D using the Crank-Nicholson method. Includes an experimental verification of the solvers convergence and error. "
       ],
-      "coverImage": "projects/schrodinger_cover.png",
+      "coverImage": "/projects/schrodinger_cover.png",
       "writeupLink": ""
     },
     {
@@ -189,7 +189,7 @@
       "description": [
         "Wrote a program in Matlab which performs and visualizes a gravitational simulation of collisions between two or more galaxies based on the Toomre model. Includes calculations to demonstrate that the convergence of the FDA solver behaves as expected with changing step size."
       ],
-      "coverImage": "projects/galactic_collision.png",
+      "coverImage": "/projects/galactic_collision.png",
       "writeupLink": ""
     }
   ]
