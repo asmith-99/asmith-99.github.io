@@ -16,7 +16,7 @@ function AboutPage() {
           work from the atoms-up, and share my knowledge with others.
         </p>
         <p>
-          I have the most experience working in Javascript, but I've worked in
+          I have the most experience working in JavaScript, but I've worked in
           C/C++, Python, MATLAB, and others.
         </p>
         <p>
