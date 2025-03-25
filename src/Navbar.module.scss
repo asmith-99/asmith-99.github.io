@@ -39,14 +39,15 @@
 .nav-link {
   color: var(--header-color);
   text-decoration: none;
-}
 
-.nav-link:any-link {
-  color: var(--header-color);
-}
+  &:any-link {
+    color: var(--header-color);
+  }
 
-.nav-link:hover {
-  opacity: 0.5;
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
 }
 
 .footer {

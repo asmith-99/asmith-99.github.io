@@ -1,4 +1,5 @@
 import Education from "./Education";
+import ProjectsCarousel from "./ProjectsCarousel";
 import WorkHistory from "./WorkHistory";
 import { cx } from "../util";
 import resume from "../resume.json";
@@ -27,6 +28,10 @@ function AboutPage() {
       <section className={styles["about-section"]}>
         <h1>Education</h1>
         <Education />
+      </section>
+      <section className={styles["about-section"]}>
+        <h1>Projects</h1>
+        <ProjectsCarousel />
       </section>
       <section className={cx(styles["about-section"], styles["work-exp"])}>
         <h1>Work</h1>

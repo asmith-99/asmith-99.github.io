@@ -1,0 +1,48 @@
+@import "../mixins.scss";
+
+.project-container {
+  position: relative;
+  padding: 0rem 0.5rem;
+  &:hover .project-blurb {
+    opacity: 1;
+  }
+}
+
+.project-blurb {
+  opacity: 0;
+  @include blurred-bg;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1rem;
+  max-width: calc(100% - 2rem);
+  transition: opacity 0.25s;
+}
+
+.project-image {
+  height: 12rem;
+  width: 16rem;
+  background: #281d66;
+  filter: grayscale(25%) brightness(1.25);
+  object-fit: cover;
+}
+
+.project-name {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  max-width: calc(100% - 2rem);
+  font-weight: normal;
+  font-size: larger;
+  @include blurred-bg;
+  z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.dots li button::before {
+  opacity: 0.25;
+  color: white !important;
+}

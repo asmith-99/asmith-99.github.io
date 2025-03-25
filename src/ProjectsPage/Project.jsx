@@ -8,13 +8,12 @@ export default function Project({
   description,
   blurb,
   coverImage,
-  writeupLink,
   links,
 }) {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className={styles["container"]} data-show-more={showMore}>
+    <div className={styles["container"]} data-show-more={showMore} id={name}>
       <div className={styles["preview-content"]}>
         <img className={styles["cover-image"]} src={coverImage} />
         <div className={styles["details"]}>
