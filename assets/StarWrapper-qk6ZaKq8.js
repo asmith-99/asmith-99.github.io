@@ -1,4 +1,4 @@
-import{w as Vi}from"./with-props-wq2SvAri.js";import{a as _8,o as A1,O as Gi}from"./chunk-K6CSEXPM-CgpvmZPW.js";/**
+import{w as Vi}from"./with-props-XCJKEUB8.js";import{a as _8,o as A1,O as Gi}from"./chunk-K6CSEXPM-B9ePjNdw.js";/**
  * @license
  * Copyright 2010-2025 Three.js Authors
  * SPDX-License-Identifier: MIT
