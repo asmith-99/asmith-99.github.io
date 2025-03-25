@@ -17,6 +17,7 @@
   gap: 1rem;
   transition: opacity 0.25s;
   pointer-events: none;
+  height: 100%;
 }
 
 .more-content {
@@ -51,7 +52,7 @@
   width: 40%;
   height: 100%;
   background: #281d66;
-  filter: grayscale(50%) brightness(1.25);
+  filter: grayscale(25%) brightness(1.25);
   object-fit: cover;
 }
 
