@@ -105,6 +105,22 @@
   ],
   "projects": [
     {
+      "name": "StarBG",
+      "isAcademic": false,
+      "duration": "2025",
+      "blurb": "Dynamic Astronomical Website Background",
+      "description": [
+        "You're looking at it! A catalogue of the 9000 brightest stars is rendered into the browser using three.js. A preprocessing script prepares the data for the browser, mapping magnitudes and color indices to sizes and RGB colors. Custom shaders are used to pass color and size data to a particle rendering system to enable performant rendering of a large number of stars. The same custom shaders are also used to add a dynamic 'sparkle' effect."
+      ],
+      "coverImage": "/projects/starbg_cover.png",
+      "links": [
+        {
+          "text": "Demo and writeup",
+          "link": "/stars"
+        }
+      ]
+    },
+    {
       "name": "Tile Macropad",
       "isAcademic": false,
       "duration": "2024",
@@ -113,7 +129,7 @@
         "Designed, 3D printed, and built a useful mini-keyboard with a unique visual design making use of decorative glass tiles as key caps. Used Vial firmware to enable easy reconfiguration of functionality."
       ],
       "coverImage": "/projects/macropad_cover.png",
-      "writeupLink": ""
+      "links": []
     },
     {
       "name": "Homeauto V1",
@@ -124,7 +140,7 @@
         "Off-the-shelf RF-controlled outlet switches are controlled using a RF transmitter attached to a Raspberry Pi. The Raspberry Pi is running a Node.JS + Express server, which serves both a React web-app and an API that can control the outlet switches via the RF transmitter. The website, accessible to any devices on the network, allows the user to view and toggle the state of all connected outlet switches."
       ],
       "coverImage": "/projects/homeauto_cover.png",
-      "writeupLink": ""
+      "links": []
     },
     {
       "name": "Autonomous 'Pet' Robot ",
@@ -135,7 +151,7 @@
         "Designed and built a compact autonomous two-wheeled robot with a suite of sensors (ultrasonic, touch, light) and a visual design with servo-actuated ‘ears’ to imitate the behavior of household pets. "
       ],
       "coverImage": "/projects/catbot_cover.png",
-      "writeupLink": ""
+      "links": []
     },
     {
       "name": "StarPointer",
@@ -146,7 +162,7 @@
         "Designed and built a 2-axis robotic arm with a laser pointer affixed to the end. A controller written in C is relayed commands via serial connection from a Python program running on a PC, which provides coordinates corresponding to the direction to the stars in the sky corrected for the local time, longitude, and latitude."
       ],
       "coverImage": "/projects/starpointer_temp_cover.png",
-      "writeupLink": ""
+      "links": []
     },
     {
       "name": "MP430 Robotic Arm",
@@ -157,7 +173,7 @@
         "Designed and built a miniature 4-axis robotic arm, controlled using a matching 'puppet arm' with a potentiometer in each joint and driven using an MP430 microcontroller and firmware written in C."
       ],
       "coverImage": "/projects/msp430_arm_cover.png",
-      "writeupLink": ""
+      "links": []
     },
     {
       "name": "Material based Ray-tracing Renderer",
@@ -168,7 +184,7 @@
         "Created a C++ program capable of rendering different types of scattering (diffuse, dielectric, and metallic) in scenes using the path-tracing method with global illumination, multisampling, light sources and depth of field."
       ],
       "coverImage": "/projects/pathtracer_cover.png",
-      "writeupLink": ""
+      "links": []
     },
     {
       "name": "Time-Dependent Shrödinger Equation Solver",
@@ -179,7 +195,7 @@
         "Wrote a program in Matlab which solves for and visualizes the evolution of the time-dependent Shrödinger equation in 1D and 2D using the Crank-Nicholson method. Includes an experimental verification of the solvers convergence and error. "
       ],
       "coverImage": "/projects/schrodinger_cover.png",
-      "writeupLink": ""
+      "links": []
     },
     {
       "name": "Galactic Collision Simulation",
@@ -190,7 +206,7 @@
         "Wrote a program in Matlab which performs and visualizes a gravitational simulation of collisions between two or more galaxies based on the Toomre model. Includes calculations to demonstrate that the convergence of the FDA solver behaves as expected with changing step size."
       ],
       "coverImage": "/projects/galactic_collision.png",
-      "writeupLink": ""
+      "links": []
     }
   ]
 }

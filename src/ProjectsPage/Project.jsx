@@ -9,6 +9,7 @@ export default function Project({
   blurb,
   coverImage,
   writeupLink,
+  links,
 }) {
   const [showMore, setShowMore] = useState(false);
 
@@ -30,11 +31,11 @@ export default function Project({
         ))}
       </div>
       <div className={styles["button-container"]}>
-        {writeupLink && (
-          <Link to={writeupLink} className={styles["writeup-link"]}>
-            Writeup
+        {links.map(({ text, link }) => (
+          <Link to={link} className={styles["writeup-link"]}>
+            {text}
           </Link>
-        )}
+        ))}
         <span
           className={styles["more-prompt"]}
           onClick={() => setShowMore((value) => !value)}
